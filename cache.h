@@ -1,10 +1,4 @@
-/*
- * cache.h - 缓存模块头文件
- *
- * name:    Arthals
- * id:      2110306206
- * mail:    2110306206@stu.pku.edu.cn
- */
+
 #include "csapp.h"
 
 #define MAX_CACHE_SIZE 1049000

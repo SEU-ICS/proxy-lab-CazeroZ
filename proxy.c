@@ -136,7 +136,6 @@ void process(rio_t* client_rio_p,string url){
    if (query_cache(client_rio_p, url)) {
         return;
     }
-    // 解析 url
     url_t url_info;
     if (parse_url(url, &url_info) < 0) {
         fprintf(stderr, "Parse url error\n");
@@ -153,7 +152,6 @@ void process(rio_t* client_rio_p,string url){
     rio_readinitb(&server_rio, server_fd);
     string buf;
     sprintf(buf, "GET %s HTTP/1.0\r\n%s", url_info.path, header_info);
-    // 发送请求行和请求头
     if (rio_writen(server_fd, buf, strlen(buf)) != strlen(buf)) {
         fprintf(stderr, "Send request line and header error\n");
         close(server_fd);
